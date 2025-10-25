@@ -74,11 +74,11 @@ export function PurchaseCard({ itemId, itemName, itemDescription, price, imageUr
 
   if (isSuccess) {
     return (
-      <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
+      <div className="bg-black/40 backdrop-blur-xl rounded-xl p-6 border border-white/30 shadow-2xl">
         <div className="text-center py-8">
           <div className="text-6xl mb-4">✅</div>
-          <h3 className="text-xl font-bold text-white mb-2">Purchase Successful!</h3>
-          <p className="text-gray-300 mb-4">{itemName} is now yours</p>
+          <h3 className="text-xl font-bold text-white mb-2 text-shadow">Purchase Successful!</h3>
+          <p className="text-gray-100 mb-4 text-shadow">{itemName} is now yours</p>
           <a
             href={`https://${chain?.id === 11155111 ? 'sepolia.etherscan.io' : 'sepolia.basescan.org'}/tx/${hash}`}
             target="_blank"
@@ -93,8 +93,8 @@ export function PurchaseCard({ itemId, itemName, itemDescription, price, imageUr
   }
 
   return (
-    <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-all">
-      <div className="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
+    <div className="bg-black/30 backdrop-blur-xl rounded-xl overflow-hidden border border-white/30 hover:border-white/50 transition-all shadow-2xl hover:shadow-purple-500/20">
+      <div className="h-56 bg-gradient-to-br from-purple-600/80 to-blue-600/80 flex items-center justify-center relative overflow-hidden">
         {imagePath && !imageError ? (
           <Image
             src={imagePath}
@@ -109,13 +109,13 @@ export function PurchaseCard({ itemId, itemName, itemDescription, price, imageUr
         )}
       </div>
       
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-2">{itemName}</h3>
-        <p className="text-gray-300 text-sm mb-4">{itemDescription}</p>
+      <div className="p-4">
+        <h3 className="text-lg font-bold text-white mb-1">{itemName}</h3>
+        <p className="text-gray-300 text-xs mb-3 line-clamp-1">{itemDescription}</p>
         
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-2xl font-bold text-white">{price} ETH</span>
-          <span className="text-sm text-gray-400">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-xl font-bold text-white">{price} ETH</span>
+          <span className="text-xs text-gray-400">
             {chain?.name || "Connect Wallet"}
           </span>
         </div>
@@ -123,7 +123,7 @@ export function PurchaseCard({ itemId, itemName, itemDescription, price, imageUr
         <button
           onClick={handlePurchase}
           disabled={isPurchasing || isConfirming || !contractAddress}
-          className="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full py-2 bg-white hover:bg-gray-100 text-black text-sm font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
         >
           {isConfirming ? "Confirming..." : isPurchasing ? "Processing..." : "Purchase Item"}
         </button>

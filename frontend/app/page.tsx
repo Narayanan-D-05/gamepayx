@@ -57,16 +57,47 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="border-b border-white/10 backdrop-blur-sm sticky top-0 z-50 bg-black/20">
-        <div className="container mx-auto px-4 py-4">
+      <nav className="border-b border-white/10 backdrop-blur-xl sticky top-0 z-50 bg-black/60">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <h1 className="text-2xl font-bold text-white">🎮 PayX</h1>
-              <span className="px-2 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 text-xs rounded-full border border-yellow-500/30">
-                v2.0 Cross-Chain
-              </span>
+            <div className="flex items-center gap-6">
+              <h1 className="text-3xl font-bold text-white tracking-tight">GamepayX</h1>
+              
+              {/* Navigation Pills */}
+              <div className="hidden md:flex gap-2">
+                <button
+                  onClick={() => setActiveTab("crosschain")}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                    activeTab === "crosschain"
+                      ? "bg-white text-black"
+                      : "bg-transparent text-gray-300 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  Cross-Chain Store
+                </button>
+                <button
+                  onClick={() => setActiveTab("shop")}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                    activeTab === "shop"
+                      ? "bg-white text-black"
+                      : "bg-transparent text-gray-300 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  Regular Store
+                </button>
+                <button
+                  onClick={() => setActiveTab("inventory")}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                    activeTab === "inventory"
+                      ? "bg-white text-black"
+                      : "bg-transparent text-gray-300 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  Inventory
+                </button>
+              </div>
             </div>
             
             <div className="flex items-center gap-3">
@@ -108,7 +139,7 @@ export default function Home() {
               {!isConnected && (
                 <button
                   onClick={() => connectors[0] && connect({ connector: connectors[0] })}
-                  className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all font-semibold shadow-lg"
+                  className="px-6 py-2 bg-white hover:bg-gray-100 text-black rounded-lg transition-all font-semibold shadow-lg"
                 >
                   Connect Wallet
                 </button>
@@ -119,70 +150,42 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-8">
-          <h2 className="text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Cross-Chain Game Store
+      <div className="container mx-auto px-6 py-20">
+        <div className="text-center mb-16">
+          <h2 className="text-7xl font-bold text-white mb-6 tracking-tight">
+            GamepayX
           </h2>
-          <p className="text-xl text-gray-300 mb-4">
-            Purchase once, own everywhere with Avail Nexus
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Own your items. Play anywhere. Trade everywhere.
           </p>
-          <div className="flex items-center justify-center gap-3 text-sm text-gray-400">
-            <span className="flex items-center gap-1">
-              <span className="text-blue-400">⚡</span> Instant Verification
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              <span className="text-purple-400">🌐</span> Multi-Chain Support
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1">
-              <span className="text-pink-400">🔐</span> Lighthouse Storage
-            </span>
-          </div>
         </div>
 
-        {/* Tabs */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex bg-white/5 backdrop-blur-md rounded-lg p-1 border border-white/10">
+        {/* Mobile Navigation */}
+        <div className="md:hidden flex justify-center mb-8">
+          <div className="inline-flex bg-black/40 backdrop-blur-lg rounded-lg p-1 border border-white/20">
             <button
               onClick={() => setActiveTab("crosschain")}
-              className={`px-6 py-2 rounded-md transition-all font-semibold ${
-                activeTab === "crosschain"
-                  ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
+              className={`px-3 py-2 rounded-md text-xs font-medium transition-all ${
+                activeTab === "crosschain" ? "bg-white text-black" : "text-gray-400"
               }`}
             >
-              <span className="flex items-center gap-2">
-                <span>🌐</span>
-                Cross-Chain Store
-              </span>
+              Cross-Chain
             </button>
             <button
               onClick={() => setActiveTab("shop")}
-              className={`px-6 py-2 rounded-md transition-all font-semibold ${
-                activeTab === "shop"
-                  ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
+              className={`px-3 py-2 rounded-md text-xs font-medium transition-all ${
+                activeTab === "shop" ? "bg-white text-black" : "text-gray-400"
               }`}
             >
-              <span className="flex items-center gap-2">
-                <span>🛒</span>
-                Regular Store
-              </span>
+              Store
             </button>
             <button
               onClick={() => setActiveTab("inventory")}
-              className={`px-6 py-2 rounded-md transition-all font-semibold ${
-                activeTab === "inventory"
-                  ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg"
-                  : "text-gray-400 hover:text-white"
+              className={`px-3 py-2 rounded-md text-xs font-medium transition-all ${
+                activeTab === "inventory" ? "bg-white text-black" : "text-gray-400"
               }`}
             >
-              <span className="flex items-center gap-2">
-                <span>📦</span>
-                My Inventory
-              </span>
+              Inventory
             </button>
           </div>
         </div>
@@ -190,10 +193,10 @@ export default function Home() {
         {/* Content */}
         <main>
           {!isConnected ? (
-            <div className="text-center py-20 bg-white/5 backdrop-blur-md rounded-xl border border-white/10">
+            <div className="text-center py-20 bg-black/40 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl">
               <div className="text-6xl mb-6">🔐</div>
-              <p className="text-xl text-white mb-4">Connect Your Wallet</p>
-              <p className="text-gray-400 mb-6">Start shopping cross-chain with Avail Nexus</p>
+              <p className="text-xl text-white mb-4 text-shadow">Connect Your Wallet</p>
+              <p className="text-gray-300 mb-6 text-shadow">Start shopping cross-chain with Avail Nexus</p>
               <button
                 onClick={() => connectors[0] && connect({ connector: connectors[0] })}
                 className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all font-semibold shadow-lg"
@@ -206,12 +209,12 @@ export default function Home() {
               {/* Cross-Chain Store */}
               {activeTab === "crosschain" && (
                 <div>
-                  <div className="mb-6 p-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg border border-blue-500/20">
+                  <div className="mb-6 p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-lg rounded-lg border border-blue-500/30 shadow-xl">
                     <div className="flex items-start gap-3">
                       <span className="text-3xl">🌐</span>
                       <div>
-                        <h3 className="text-lg font-bold text-white mb-1">Cross-Chain Marketplace</h3>
-                        <p className="text-gray-300 text-sm">
+                        <h3 className="text-lg font-bold text-white mb-1 text-shadow">Cross-Chain Marketplace</h3>
+                        <p className="text-gray-100 text-sm text-shadow">
                           Items purchased here are accessible on <strong>all chains</strong> via Avail verification.
                           Buy on Sepolia, use on Base!
                         </p>
@@ -334,12 +337,12 @@ export default function Home() {
               {/* Regular Store */}
               {activeTab === "shop" && (
                 <div>
-                  <div className="mb-6 p-4 bg-white/5 rounded-lg border border-white/10">
+                  <div className="mb-6 p-4 bg-white/10 backdrop-blur-lg rounded-lg border border-white/20 shadow-xl">
                     <div className="flex items-start gap-3">
                       <span className="text-3xl">🛒</span>
                       <div>
-                        <h3 className="text-lg font-bold text-white mb-1">Regular Marketplace</h3>
-                        <p className="text-gray-300 text-sm">
+                        <h3 className="text-lg font-bold text-white mb-1 text-shadow">Regular Marketplace</h3>
+                        <p className="text-gray-100 text-sm text-shadow">
                           Traditional single-chain purchases. Items are only available on the chain you purchase them on.
                         </p>
                       </div>
@@ -452,28 +455,28 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 mt-20">
+      <footer className="border-t border-white/20 mt-20 bg-black/40 backdrop-blur-xl">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
             <div>
-              <h4 className="text-white font-bold mb-3">🌐 Powered By</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <h4 className="text-white font-bold mb-3 text-shadow">🌐 Powered By</h4>
+              <ul className="space-y-2 text-gray-300 text-sm text-shadow">
                 <li>• Avail Nexus (Cross-Chain)</li>
                 <li>• Lighthouse (Storage)</li>
                 <li>• Hardhat 3 (Development)</li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-bold mb-3">⛓️ Networks</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <h4 className="text-white font-bold mb-3 text-shadow">⛓️ Networks</h4>
+              <ul className="space-y-2 text-gray-300 text-sm text-shadow">
                 <li>• Ethereum Sepolia</li>
                 <li>• Base Sepolia</li>
                 <li>• Avail Turing (Coming Soon)</li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white font-bold mb-3">📚 Resources</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <h4 className="text-white font-bold mb-3 text-shadow">📚 Resources</h4>
+              <ul className="space-y-2 text-gray-300 text-sm text-shadow">
                 <li>
                   <a href="https://docs.availproject.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     Avail Docs →
@@ -487,8 +490,8 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="text-center text-gray-400 text-sm pt-6 border-t border-white/10">
-            <p>© 2025 PayX • Cross-Chain Game Store • Built with ❤️</p>
+          <div className="text-center text-gray-300 text-sm pt-6 border-t border-white/20">
+            <p className="text-shadow">© 2025 GamepayX • Cross-Chain Game Store • Built with ❤️</p>
           </div>
         </div>
       </footer>

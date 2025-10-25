@@ -111,9 +111,9 @@ export function CrossChainPurchaseCard({
   };
 
   const getChainColor = () => {
-    if (chain?.id === 11155111) return "from-blue-600 to-cyan-600";
-    if (chain?.id === 84532) return "from-purple-600 to-pink-600";
-    return "from-gray-600 to-gray-700";
+    if (chain?.id === 11155111) return "from-blue-600/80 to-cyan-600/80";
+    if (chain?.id === 84532) return "from-purple-600/80 to-pink-600/80";
+    return "from-gray-600/80 to-gray-700/80";
   };
 
   if (isSuccess) {
@@ -147,7 +147,7 @@ export function CrossChainPurchaseCard({
   }
 
   return (
-    <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-all group">
+    <div className="bg-black/30 backdrop-blur-xl rounded-xl overflow-hidden border border-white/30 hover:border-white/50 transition-all shadow-2xl hover:shadow-purple-500/20 group">
       {/* Top Badge */}
       <div className="absolute top-3 right-3 z-10">
         <span className="px-2 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-semibold">
@@ -156,7 +156,7 @@ export function CrossChainPurchaseCard({
       </div>
 
       {/* Item Image/Icon */}
-      <div className={`h-48 bg-gradient-to-br ${getChainColor()} flex items-center justify-center relative overflow-hidden`}>
+      <div className={`h-56 bg-gradient-to-br ${getChainColor()} flex items-center justify-center relative overflow-hidden`}>
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
         {/* Try to load image, fallback to emoji icon */}
         <div className="relative z-10 group-hover:scale-110 transition-transform w-full h-full flex items-center justify-center">
@@ -164,31 +164,31 @@ export function CrossChainPurchaseCard({
         </div>
       </div>
       
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-bold text-white">{itemName}</h3>
-          <span className={`px-2 py-1 bg-gradient-to-r ${getChainColor()} text-white text-xs rounded-full`}>
+      <div className="p-4">
+        <div className="flex items-start justify-between mb-2">
+          <h3 className="text-lg font-bold text-white">{itemName}</h3>
+          <span className={`px-2 py-0.5 bg-gradient-to-r ${getChainColor()} text-white text-xs rounded-full`}>
             {getChainName()}
           </span>
         </div>
         
-        <p className="text-gray-300 text-sm mb-4 line-clamp-2">{itemDescription}</p>
+        <p className="text-gray-300 text-xs mb-3 line-clamp-1">{itemDescription}</p>
         
-        <div className="flex items-center justify-between mb-4 pb-4 border-b border-white/10">
+        <div className="flex items-center justify-between mb-3 pb-3 border-b border-white/10">
           <div>
-            <span className="text-2xl font-bold text-white">{price} ETH</span>
-            <p className="text-xs text-gray-400 mt-1">≈ ${(parseFloat(price) * 2500).toFixed(2)} USD</p>
+            <span className="text-xl font-bold text-white">{price} ETH</span>
+            <p className="text-xs text-gray-400">≈ ${(parseFloat(price) * 2500).toFixed(2)} USD</p>
           </div>
           <div className="text-right">
             <p className="text-xs text-gray-400">Available on</p>
-            <p className="text-sm text-white font-semibold">All Chains</p>
+            <p className="text-xs text-white font-semibold">All Chains</p>
           </div>
         </div>
 
         <button
           onClick={handlePurchase}
           disabled={isPurchasing || isConfirming || !contractAddress || !address}
-          className={`w-full py-3 bg-gradient-to-r ${getChainColor()} hover:opacity-90 text-white font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg`}
+          className="w-full py-2 bg-white hover:bg-gray-100 text-black text-sm font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
         >
           {isConfirming ? (
             <span className="flex items-center justify-center gap-2">

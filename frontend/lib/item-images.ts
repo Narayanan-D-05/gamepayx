@@ -5,26 +5,26 @@
 
 export const ITEM_IMAGE_MAP: Record<string, string> = {
   // Swords (7 items)
-  "sword-001": "black katana.jpeg",
-  "sword-002": "dark sword.jpg",
-  "sword-003": "rune blade.jpg",
-  "sword-004": "dragon dragger.jpg",
-  "sword-005": "artis sword.jpeg",
-  "sword-006": "cosmic sword.jpeg",
-  "sword-007": "ether sword.jpeg",
+  "sword-001": "black katana.png",
+  "sword-002": "dark sword.png",
+  "sword-003": "rune blade.png",
+  "sword-004": "dragon dragger.png",
+  "sword-005": "artis sword.png",
+  "sword-006": "cosmic sword.png",
+  "sword-007": "ether sword.png",
   
   // Ranged Weapons (3 items)
-  "weapon-001": "dark bow.jpg",
-  "weapon-002": "dragon shot.jpg",
-  "weapon-003": "magic pistol.jpg",
+  "weapon-001": "dark bow.png",
+  "weapon-002": "dragon shot.png",
+  "weapon-003": "magic pistol.png",
   
   // Claws (2 items)
-  "claw-001": "rune claw.jpg",
-  "claw-002": "steel claw.jpg",
+  "claw-001": "rune claw.png",
+  "claw-002": "steel claw.png",
   
   // Special Weapons (2 items)
-  "reaper-001": "blood reaper.jpg",
-  "twin-001": "heavenly twin sword.jpeg",
+  "reaper-001": "blood reaper.png",
+  "twin-001": "heavenly twin sword.png",
 };
 
 /**
