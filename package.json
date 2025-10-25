@@ -1,0 +1,38 @@
+{
+  "name": "payx",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "hardhat.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "clean": "hardhat clean",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:baseSepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm start",
+    "lighthouse:upload": "node scripts/lighthouse-upload.js upload",
+    "lighthouse:protect": "node scripts/lighthouse-upload.js protect",
+    "withdraw:sepolia": "hardhat run scripts/withdraw.js --network sepolia",
+    "withdraw:baseSepolia": "hardhat run scripts/withdraw.js --network baseSepolia"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox-viem": "^5.0.0",
+    "hardhat": "^3.0.9"
+  },
+  "dependencies": {
+    "@avail-project/nexus": "^1.1.0",
+    "@avail-project/nexus-widgets": "^0.0.6",
+    "@lighthouse-web3/sdk": "^0.4.3",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.15.0"
+  }
+}

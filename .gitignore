@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Environment Variables
+.env
+.env.local
+.env.production.local
+frontend/.env.local
+
+# Build outputs
+dist/
+build/
+frontend/.next/
+frontend/out/
+
+# Cache
+cache/
+artifacts/
+frontend/.next/
+.hardhat/
+typechain-types/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Deployment
+deployments/
+ignition/deployments/
+
+# Temp
+*.tmp
+.cache/
