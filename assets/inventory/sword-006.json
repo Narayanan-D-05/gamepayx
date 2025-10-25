@@ -1,0 +1,37 @@
+{
+  "itemId": "sword-006",
+  "name": "Cosmic Sword",
+  "description": "Blade forged from cosmic energy and stardust. Harness the power of the universe.",
+  "icon": "🌟",
+  "image": "/images/cosmic sword.jpeg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 102
+    },
+    {
+      "trait_type": "Cosmic Power",
+      "value": 110
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Cosmic"
+    }
+  ],
+  "stats": {
+    "attack": 102,
+    "defense": 23,
+    "durability": 550,
+    "weight": 8.8
+  },
+  "lore": "Created from the remnants of a fallen star, this blade channels the raw energy of the cosmos. Its wielder can call upon stellar power to devastate enemies with cosmic force.",
+  "unlockables": {
+    "special_move": "Stellar Devastation",
+    "combo_attacks": ["Cosmic Ray", "Star Fall", "Supernova Strike"],
+    "skin_variants": ["Nebula Blade", "Galaxy Edge", "Starlight Sword"]
+  }
+}

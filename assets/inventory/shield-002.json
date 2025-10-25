@@ -1,0 +1,37 @@
+{
+  "itemId": "shield-002",
+  "name": "Dragon Shield",
+  "description": "An impenetrable shield made from dragon scales. Defend against any attack!",
+  "icon": "🛡️",
+  "image": "https://gateway.lighthouse.storage/ipfs/QmShield002",
+  "attributes": [
+    {
+      "trait_type": "Defense",
+      "value": 120
+    },
+    {
+      "trait_type": "Durability",
+      "value": 95
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Ice"
+    }
+  ],
+  "stats": {
+    "attack": 10,
+    "defense": 120,
+    "durability": 800,
+    "weight": 15.0
+  },
+  "lore": "Crafted from the scales of the ancient Ice Dragon Glacius, this shield can withstand any blow and freezes enemies on contact.",
+  "unlockables": {
+    "special_move": "Ice Barrier",
+    "combo_attacks": ["Frozen Fortress", "Glacial Shield Bash"],
+    "skin_variants": ["Ruby Shield", "Emerald Guardian", "Obsidian Defender"]
+  }
+}

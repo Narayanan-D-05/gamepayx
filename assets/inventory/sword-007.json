@@ -1,0 +1,37 @@
+{
+  "itemId": "sword-007",
+  "name": "Ether Sword",
+  "description": "Ethereal blade that phases through dimensions. Strike from the astral plane.",
+  "icon": "✨",
+  "image": "/images/ether sword.jpeg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 93
+    },
+    {
+      "trait_type": "Phase Shift",
+      "value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Ethereal"
+    }
+  ],
+  "stats": {
+    "attack": 93,
+    "defense": 20,
+    "durability": 500,
+    "weight": 6.0
+  },
+  "lore": "Crafted in the ethereal realm between dimensions, this blade exists partially in multiple realities at once. It can phase through armor and shields, striking directly at an enemy's essence.",
+  "unlockables": {
+    "special_move": "Dimensional Slash",
+    "combo_attacks": ["Phase Strike", "Astral Cut", "Reality Rend"],
+    "skin_variants": ["Void Ether", "Dream Blade", "Spirit Edge"]
+  }
+}

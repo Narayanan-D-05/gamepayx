@@ -1,0 +1,37 @@
+{
+  "itemId": "reaper-001",
+  "name": "Blood Reaper",
+  "description": "A cursed scythe that drains life force. Every soul it claims increases its terrible power.",
+  "icon": "💀",
+  "image": "/images/blood reaper.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 115
+    },
+    {
+      "trait_type": "Life Steal",
+      "value": 85
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Death"
+    }
+  ],
+  "stats": {
+    "attack": 115,
+    "defense": 15,
+    "durability": 666,
+    "weight": 12.0
+  },
+  "lore": "Forged from the bones of ancient demons and tempered in the blood of fallen warriors, the Blood Reaper hungers for souls. Each enemy slain feeds the weapon, making it stronger while healing its wielder. Legends say it has claimed over 10,000 lives.",
+  "unlockables": {
+    "special_move": "Soul Harvest",
+    "combo_attacks": ["Death's Embrace", "Blood Moon", "Reaper's Wrath"],
+    "skin_variants": ["Crimson Reaper", "Bone Scythe", "Void Harvester"]
+  }
+}

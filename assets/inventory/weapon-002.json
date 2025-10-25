@@ -1,0 +1,37 @@
+{
+  "itemId": "weapon-002",
+  "name": "Dragon Shot",
+  "description": "Dragon-powered rifle with explosive rounds. Each shot carries the fury of ancient wyrms.",
+  "icon": "🔫",
+  "image": "/images/dragon shot.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 98
+    },
+    {
+      "trait_type": "Range",
+      "value": 120
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Dragon Fire"
+    }
+  ],
+  "stats": {
+    "attack": 98,
+    "defense": 8,
+    "durability": 380,
+    "weight": 6.8
+  },
+  "lore": "Engineered by dragon riders who combined ancient magic with modern weaponry. Each bullet is infused with concentrated dragon breath, creating explosive impacts that can decimate armored targets.",
+  "unlockables": {
+    "special_move": "Dragon's Fury Blast",
+    "combo_attacks": ["Wyrm Barrage", "Flame Burst Shot", "Dragon Storm"],
+    "skin_variants": ["Red Dragon Rifle", "Azure Wyrm", "Platinum Drake"]
+  }
+}

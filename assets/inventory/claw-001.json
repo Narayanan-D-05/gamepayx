@@ -1,0 +1,37 @@
+{
+  "itemId": "claw-001",
+  "name": "Rune Claw",
+  "description": "Razor-sharp claws etched with ancient runes. Each swipe unleashes magical devastation.",
+  "icon": "🦅",
+  "image": "/images/rune claw.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 82
+    },
+    {
+      "trait_type": "Speed",
+      "value": 92
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Arcane"
+    }
+  ],
+  "stats": {
+    "attack": 82,
+    "defense": 18,
+    "durability": 450,
+    "weight": 3.6
+  },
+  "lore": "Inscribed with runes of power by ancient monks, these claws combine brutal physical strikes with magical energy. Each slash leaves arcane residue that continues to damage enemies after the initial strike.",
+  "unlockables": {
+    "special_move": "Runic Slash",
+    "combo_attacks": ["Glyph Fury", "Rune Storm", "Mystic Tear"],
+    "skin_variants": ["Elder Talons", "Arcane Claws", "Celestial Blades"]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "itemId": "twin-001",
+  "name": "Heavenly Twin Sword",
+  "description": "Dual blades blessed by celestial beings. Heaven and Earth united in perfect harmony.",
+  "icon": "⚔️",
+  "image": "/images/heavenly twin sword.jpeg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 108
+    },
+    {
+      "trait_type": "Dual Wielding",
+      "value": 120
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Celestial"
+    }
+  ],
+  "stats": {
+    "attack": 108,
+    "defense": 26,
+    "durability": 600,
+    "weight": 9.5
+  },
+  "lore": "These twin blades were blessed by the Heavenly Emperor and forged in divine fire. One represents Heaven's wrath, the other Earth's strength. Together, they are unstoppable, creating devastating dual-wielding combinations that no single blade can match.",
+  "unlockables": {
+    "special_move": "Heavenly Dual Strike",
+    "combo_attacks": ["Twin Dragon Dance", "Celestial Whirlwind", "Divine Harmony"],
+    "skin_variants": ["Angelic Twins", "Golden Heaven", "Sacred Dual Blades"]
+  }
+}

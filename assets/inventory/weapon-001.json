@@ -1,0 +1,37 @@
+{
+  "itemId": "weapon-001",
+  "name": "Dark Bow",
+  "description": "A mystical bow that never misses its target. Arrows fly true through darkness itself.",
+  "icon": "🏹",
+  "image": "/images/dark bow.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 92
+    },
+    {
+      "trait_type": "Range",
+      "value": 150
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Shadow"
+    }
+  ],
+  "stats": {
+    "attack": 92,
+    "defense": 10,
+    "durability": 420,
+    "weight": 5.2
+  },
+  "lore": "Carved from the wood of the Shadow Tree and strung with dragon sinew, this bow can fire arrows that phase through obstacles. Master archers claim it whispers the location of targets in the dark.",
+  "unlockables": {
+    "special_move": "Phantom Arrow",
+    "combo_attacks": ["Shadow Volley", "Dark Barrage", "Void Shot"],
+    "skin_variants": ["Eclipse Bow", "Midnight Hunter", "Umbral Archer"]
+  }
+}

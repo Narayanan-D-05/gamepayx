@@ -1,0 +1,37 @@
+{
+  "itemId": "weapon-003",
+  "name": "Magic Pistol",
+  "description": "Enchanted pistol that fires arcane bullets. Channel pure magical energy with each shot.",
+  "icon": "🪄",
+  "image": "/images/magic pistol.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 85
+    },
+    {
+      "trait_type": "Magic Power",
+      "value": 110
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Arcane"
+    }
+  ],
+  "stats": {
+    "attack": 85,
+    "defense": 12,
+    "durability": 400,
+    "weight": 4.5
+  },
+  "lore": "Created by the Archmage Council, this pistol translates pure mana into devastating projectiles. Unlike conventional weapons, it never runs out of ammunition as long as the wielder has magical energy.",
+  "unlockables": {
+    "special_move": "Arcane Burst",
+    "combo_attacks": ["Mana Barrage", "Magic Missile Storm", "Spell Shot"],
+    "skin_variants": ["Mystic Revolver", "Crystal Gun", "Ethereal Pistol"]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "itemId": "sword-002",
+  "name": "Dark Sword",
+  "description": "A blade shrouded in shadow energy. Those who wield it command the power of darkness itself.",
+  "icon": "⚔️",
+  "image": "/images/dark sword.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 88
+    },
+    {
+      "trait_type": "Speed",
+      "value": 75
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Shadow"
+    }
+  ],
+  "stats": {
+    "attack": 88,
+    "defense": 22,
+    "durability": 480,
+    "weight": 7.8
+  },
+  "lore": "Crafted from meteorite iron and tempered in shadow essence, this sword pulses with dark energy. Warriors who master its power can channel shadow magic through each strike.",
+  "unlockables": {
+    "special_move": "Shadow Cleave",
+    "combo_attacks": ["Dark Crescent", "Shadow Wave", "Umbral Fury"],
+    "skin_variants": ["Shadow Reaver", "Dark Matter Blade", "Eclipse Sword"]
+  }
+}

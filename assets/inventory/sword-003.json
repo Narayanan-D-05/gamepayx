@@ -1,0 +1,37 @@
+{
+  "itemId": "sword-003",
+  "name": "Rune Blade",
+  "description": "Ancient sword inscribed with powerful runes. Each glyph holds the power of forgotten magic.",
+  "icon": "✨",
+  "image": "/images/rune blade.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 105
+    },
+    {
+      "trait_type": "Speed",
+      "value": 80
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Arcane"
+    }
+  ],
+  "stats": {
+    "attack": 105,
+    "defense": 25,
+    "durability": 550,
+    "weight": 9.2
+  },
+  "lore": "Inscribed by the Arch-Mages of the First Age, each rune on this blade represents a different school of magic. Together, they create an unstoppable force that can cut through reality itself.",
+  "unlockables": {
+    "special_move": "Runic Devastation",
+    "combo_attacks": ["Glyph Storm", "Arcane Slash", "Rune Burst"],
+    "skin_variants": ["Elder Runes", "Celestial Script", "Dragon Glyphs"]
+  }
+}

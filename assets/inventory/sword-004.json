@@ -1,0 +1,37 @@
+{
+  "itemId": "sword-004",
+  "name": "Dragon Dragger",
+  "description": "A mystical dagger infused with dragon essence. Small but devastating with dragon fire.",
+  "icon": "🐉",
+  "image": "/images/dragon dragger.jpg",
+  "attributes": [
+    {
+      "trait_type": "Damage",
+      "value": 78
+    },
+    {
+      "trait_type": "Speed",
+      "value": 95
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Dragon Fire"
+    }
+  ],
+  "stats": {
+    "attack": 78,
+    "defense": 12,
+    "durability": 400,
+    "weight": 4.5
+  },
+  "lore": "Forged from a dragon's claw and tempered in its breath, this dagger burns with eternal dragon fire. Swift and deadly, it's favored by assassins and rogues who value speed over raw power.",
+  "unlockables": {
+    "special_move": "Dragon Fang Strike",
+    "combo_attacks": ["Flame Dance", "Dragon Rush", "Inferno Stab"],
+    "skin_variants": ["Crimson Scale", "Azure Dragon", "Emerald Wyrm"]
+  }
+}

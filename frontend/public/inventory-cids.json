@@ -1,0 +1,57 @@
+{
+  "claw-001": {
+    "cid": "bafkreidj3oe4wd5567g5apaatvakxcv7n25u3lba7zolt4nylqru7maaya",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreidj3oe4wd5567g5apaatvakxcv7n25u3lba7zolt4nylqru7maaya",
+    "name": "Rune Claw"
+  },
+  "claw-002": {
+    "cid": "bafkreih2c4fdhoy4izqtfzmcxnox4i2gg7qfjrezpvr2jjrcxovfw6tzre",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreih2c4fdhoy4izqtfzmcxnox4i2gg7qfjrezpvr2jjrcxovfw6tzre",
+    "name": "Steel Claw"
+  },
+  "reaper-001": {
+    "cid": "bafkreibmg6diiacctpl2amtjil54izeo22pi3kqsghnz5glh54kdcnzpey",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreibmg6diiacctpl2amtjil54izeo22pi3kqsghnz5glh54kdcnzpey",
+    "name": "Blood Reaper"
+  },
+  "shield-002": {
+    "cid": "bafkreiaidwdlqs7ds6zx6x2tqjusql5sop7rv5np7eamgjr6ar3f4y5poy",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreiaidwdlqs7ds6zx6x2tqjusql5sop7rv5np7eamgjr6ar3f4y5poy",
+    "name": "Dragon Shield"
+  },
+  "sword-001": {
+    "cid": "bafkreigp3ucwgajh3kgrig5jhzcwhb5jjivmg6ksht3iykyghejcwcx6t4",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreigp3ucwgajh3kgrig5jhzcwhb5jjivmg6ksht3iykyghejcwcx6t4",
+    "name": "Black Katana"
+  },
+  "sword-002": {
+    "cid": "bafkreiedu4qojqtrgwx5nytr4uvi62fhrgivy4s3eelthmjyh3ct5ipc6m",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreiedu4qojqtrgwx5nytr4uvi62fhrgivy4s3eelthmjyh3ct5ipc6m",
+    "name": "Dark Sword"
+  },
+  "sword-003": {
+    "cid": "bafkreif5cjrjknspw3xajivtyi4vqikiouyejjoe7hud34mnv4a5jjm2mq",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreif5cjrjknspw3xajivtyi4vqikiouyejjoe7hud34mnv4a5jjm2mq",
+    "name": "Rune Blade"
+  },
+  "sword-004": {
+    "cid": "bafkreidquw3ey2q2u75eoq7gpva5o3yg2an7fl64drfifcxd2slzfhr6eu",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreidquw3ey2q2u75eoq7gpva5o3yg2an7fl64drfifcxd2slzfhr6eu",
+    "name": "Dragon Dragger"
+  },
+  "weapon-001": {
+    "cid": "bafkreie2sih5vp5p3xrnscg5lx4kokax4ixqs23lujp3flkoyv776y2yci",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreie2sih5vp5p3xrnscg5lx4kokax4ixqs23lujp3flkoyv776y2yci",
+    "name": "Dark Bow"
+  },
+  "weapon-002": {
+    "cid": "bafkreic2yzwhey6cmbp6dxug5hssgcmndb3tnijobea52blcr67ppfqtz4",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreic2yzwhey6cmbp6dxug5hssgcmndb3tnijobea52blcr67ppfqtz4",
+    "name": "Dragon Shot"
+  },
+  "weapon-003": {
+    "cid": "bafkreib3i3ln45wjbzk5ybhoe5z6kneouk35volf4qcpjkup4tbvrguafq",
+    "url": "https://gateway.lighthouse.storage/ipfs/bafkreib3i3ln45wjbzk5ybhoe5z6kneouk35volf4qcpjkup4tbvrguafq",
+    "name": "Magic Pistol"
+  }
+}
