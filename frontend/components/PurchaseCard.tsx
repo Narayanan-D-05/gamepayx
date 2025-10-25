@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { parseEther } from "viem";
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
+import Image from "next/image";
+import { getItemImage } from "@/lib/item-images";
 
 const GAMESTORE_ABI = [
   {
@@ -32,12 +34,16 @@ interface PurchaseCardProps {
   itemName: string;
   itemDescription: string;
   price: string;
-  imageUrl: string;
+  imageUrl?: string; // Optional - will use getItemImage() if not provided
 }
 
 export function PurchaseCard({ itemId, itemName, itemDescription, price, imageUrl }: PurchaseCardProps) {
   const { chain } = useAccount();
   const [isPurchasing, setIsPurchasing] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  
+  // Get image path from mapping
+  const imagePath = getItemImage(itemId);
   
   const contractAddress = chain?.id === 11155111 
     ? (process.env.NEXT_PUBLIC_GAMESTORE_ADDRESS_SEPOLIA as `0x${string}`)
@@ -88,8 +94,19 @@ export function PurchaseCard({ itemId, itemName, itemDescription, price, imageUr
 
   return (
     <div className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/20 hover:border-white/40 transition-all">
-      <div className="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-        <span className="text-6xl">⚔️</span>
+      <div className="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
+        {imagePath && !imageError ? (
+          <Image
+            src={imagePath}
+            alt={itemName}
+            fill
+            className="object-cover"
+            onError={() => setImageError(true)}
+            priority
+          />
+        ) : (
+          <span className="text-6xl">⚔️</span>
+        )}
       </div>
       
       <div className="p-6">
