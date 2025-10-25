@@ -4,12 +4,24 @@ A decentralized game store built with **Hardhat 3**, **Avail Nexus** for cross-c
 
 ## 🌟 Features
 
-- **Cross-Chain Payments**: Bridge tokens from Avail DA to Ethereum/Base using Avail Nexus
-- **Smart Contract Store**: Purchase in-game items with ETH on Sepolia & Base Sepolia
-- **Encrypted Assets**: Store game assets on IPFS with Lighthouse encryption
-- **Token-Gated Content**: Only purchasers can decrypt and access assets
-- **Modern Frontend**: Next.js 15 with Wagmi v2 and Viem
-- **Full Test Coverage**: Hardhat 3 Node.js test runner with Viem assertions
+- **🌐 Cross-Chain Functionality**: Buy on one chain, own on all chains via Avail Nexus
+- **🔗 Avail Integration**: Cross-chain purchase verification with Avail DA layer
+- **💰 Smart Contract Store**: Purchase in-game items with withdrawal functionality
+- **🔐 Encrypted Assets**: Store game assets on IPFS with Lighthouse encryption
+- **🎯 Token-Gated Content**: Only purchasers can decrypt and access assets
+- **🎨 Modern Frontend**: Next.js 15 with Wagmi v2 and Viem
+- **✅ Full Test Coverage**: 5 comprehensive tests including cross-chain flows
+
+## 🆕 **NEW: Avail Cross-Chain Support!**
+
+Your game store now supports **true cross-chain ownership**:
+- ✅ Purchase sword on Sepolia → Own it on Base Sepolia
+- ✅ Unified inventory across all chains
+- ✅ Cross-chain purchase verification via Avail DA
+- ✅ Deploy to Avail Turing testnet
+
+**📖 Quick Start:** See [`AVAIL_QUICKSTART.md`](./AVAIL_QUICKSTART.md)  
+**📚 Full Guide:** See [`AVAIL_INTEGRATION.md`](./AVAIL_INTEGRATION.md)
 
 ## 📋 Table of Contents
 

@@ -29,6 +29,12 @@ const config = {
       url: configVariable("BASE_SEPOLIA_RPC_URL"),
       accounts: PRIVATE_KEY ? [configVariable("PRIVATE_KEY")] : "remote",
     },
+    availTuring: {
+      type: "http",
+      url: "https://turing-rpc.avail.so",
+      accounts: PRIVATE_KEY ? [configVariable("PRIVATE_KEY")] : "remote",
+      chainId: 2400,
+    },
   },
 };
 
