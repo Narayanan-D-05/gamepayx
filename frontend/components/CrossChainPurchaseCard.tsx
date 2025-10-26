@@ -95,8 +95,18 @@ export function CrossChainPurchaseCard({
     expectedBase: process.env.NEXT_PUBLIC_CROSSCHAIN_ADDRESS_BASE,
   });
 
-  const { writeContract, data: hash } = useWriteContract();
-  const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
+  const { writeContract, data: hash, error: writeError, isError } = useWriteContract();
+  const { isLoading: isConfirming, isSuccess, isError: isReceiptError } = useWaitForTransactionReceipt({ hash });
+
+  // Reset purchasing state when transaction fails or is cancelled
+  if ((isError || isReceiptError) && isPurchasing) {
+    setIsPurchasing(false);
+  }
+
+  // Reset purchasing state when transaction starts confirming
+  if (isConfirming && isPurchasing) {
+    setIsPurchasing(false);
+  }
 
   const handlePurchase = async () => {
     if (!contractAddress || !address) return;
