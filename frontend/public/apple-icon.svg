@@ -1,0 +1,21 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="180" rx="40" fill="url(#gradient)"/>
+  
+  <!-- Sword -->
+  <path d="M120 35L130 45L75 100L65 90L120 35Z" fill="white" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M75 100L50 125L40 135L30 125L40 115L65 90L75 100Z" fill="#06B6D4" stroke="#06B6D4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="45" cy="120" r="8" fill="white"/>
+  
+  <!-- Shield outline for gaming theme -->
+  <path d="M90 55L110 55C110 55 120 60 120 80C120 100 110 120 90 130C70 120 60 100 60 80C60 60 70 55 90 55Z" 
+        fill="none" stroke="white" stroke-width="3" opacity="0.3"/>
+  
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -8,6 +8,25 @@ import React from 'react';
 export const metadata: Metadata = {
   title: "GamepayX - Cross-Chain Game Store",
   description: "Own your items. Play anywhere. Trade everywhere. Purchase in-game items with Avail Nexus cross-chain bridge.",
+  keywords: ["Web3", "Gaming", "NFT", "Cross-Chain", "Blockchain", "Ethereum", "Avail", "Game Items"],
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
+    apple: '/apple-icon.svg',
+  },
+  openGraph: {
+    title: "GamepayX - Cross-Chain Game Store",
+    description: "Own your items. Play anywhere. Trade everywhere.",
+    type: "website",
+    images: ['/icon.svg'],
+  },
+  twitter: {
+    card: "summary",
+    title: "GamepayX",
+    description: "Cross-Chain Game Store powered by Avail Nexus",
+  },
 };
 
 export default function RootLayout({
