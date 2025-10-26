@@ -5,7 +5,9 @@ import { parseEther } from "viem";
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
 import Image from "next/image";
 import { getItemImage } from "@/lib/item-images";
+import { nexusClient } from "@/lib/nexus-client";
 
+// CrossChainGameStore ABI
 const CROSSCHAIN_ABI = [
   {
     inputs: [
@@ -77,20 +79,43 @@ export function CrossChainPurchaseCard({
   const { chain, address } = useAccount();
   const [isPurchasing, setIsPurchasing] = useState(false);
   
+  // Use CrossChainGameStore contract addresses (fresh deployment)
   const contractAddress = chain?.id === 11155111 
-    ? (process.env.NEXT_PUBLIC_CROSSCHAIN_GAMESTORE_ADDRESS_SEPOLIA as `0x${string}`)
-    : (process.env.NEXT_PUBLIC_CROSSCHAIN_GAMESTORE_ADDRESS_BASE as `0x${string}`);
+    ? (process.env.NEXT_PUBLIC_CROSSCHAIN_ADDRESS_SEPOLIA as `0x${string}`)
+    : chain?.id === 84532
+    ? (process.env.NEXT_PUBLIC_CROSSCHAIN_ADDRESS_BASE as `0x${string}`)
+    : undefined;
+  
+  // Debug logging
+  console.log('🔍 CrossChain Debug:', {
+    chainId: chain?.id,
+    chainName: chain?.name,
+    contractAddress,
+    expectedSepolia: process.env.NEXT_PUBLIC_CROSSCHAIN_ADDRESS_SEPOLIA,
+    expectedBase: process.env.NEXT_PUBLIC_CROSSCHAIN_ADDRESS_BASE,
+  });
 
   const { writeContract, data: hash } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
 
   const handlePurchase = async () => {
-    if (!contractAddress) return;
+    if (!contractAddress || !address) return;
     
     setIsPurchasing(true);
     try {
       const priceInWei = parseEther(price);
       
+      // 🌉 AVAIL NEXUS SDK: Generate cross-chain proof before purchase
+      console.log('🌉 Using Avail Nexus SDK for cross-chain purchase...');
+      const purchaseHash = `0x${Buffer.from(
+        JSON.stringify({ buyer: address, itemId, price, timestamp: Date.now() })
+      ).toString('hex').slice(0, 64)}`;
+      
+      // Generate proof using Nexus SDK
+      const proof = await nexusClient.generateProof(purchaseHash, chain?.id || 11155111);
+      console.log('✅ Nexus proof generated:', proof);
+      
+      // Execute purchase on-chain
       writeContract({
         address: contractAddress,
         abi: CROSSCHAIN_ABI,
@@ -98,6 +123,9 @@ export function CrossChainPurchaseCard({
         args: [itemId, priceInWei],
         value: priceInWei,
       });
+      
+      // Note: In production, proof would be submitted to Avail DA layer
+      console.log('📤 Proof ready for Avail DA submission');
     } catch (error) {
       console.error("Purchase failed:", error);
       setIsPurchasing(false);
@@ -112,7 +140,7 @@ export function CrossChainPurchaseCard({
 
   const getChainColor = () => {
     if (chain?.id === 11155111) return "from-blue-600/80 to-cyan-600/80";
-    if (chain?.id === 84532) return "from-purple-600/80 to-pink-600/80";
+    if (chain?.id === 84532) return "from-cyan-600/80 to-teal-600/80";
     return "from-gray-600/80 to-gray-700/80";
   };
 
@@ -121,16 +149,16 @@ export function CrossChainPurchaseCard({
       <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:border-green-500/50 transition-all">
         <div className="text-center py-8">
           <div className="text-6xl mb-4">✅</div>
-          <h3 className="text-xl font-bold text-white mb-2">Purchase Successful!</h3>
-          <p className="text-gray-300 mb-2">{itemName} is now yours</p>
+          <h3 className="text-xl font-bold text-cyan-300 mb-2">Purchase Successful!</h3>
+          <p className="text-cyan-200 mb-2">{itemName} is now yours</p>
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm mb-4">
             <span>🌐</span>
             <span>Cross-Chain Enabled</span>
           </div>
 
-          <p className="text-gray-400 text-xs mb-4">
-            Accessible on all chains via Avail verification
+          <p className="text-blue-300 text-xs mb-4">
+            Access this item on any supported chain via Avail!
           </p>
           
           <a
@@ -147,10 +175,10 @@ export function CrossChainPurchaseCard({
   }
 
   return (
-    <div className="bg-black/30 backdrop-blur-xl rounded-xl overflow-hidden border border-white/30 hover:border-white/50 transition-all shadow-2xl hover:shadow-purple-500/20 group">
+    <div className="bg-black/40 backdrop-blur-xl rounded-xl overflow-hidden border border-white/40 hover:border-white/60 transition-all shadow-2xl hover:shadow-cyan-500/30 group">
       {/* Top Badge */}
       <div className="absolute top-3 right-3 z-10">
-        <span className="px-2 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 text-xs rounded-full border border-yellow-500/30 font-semibold">
+        <span className="px-2 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30 font-semibold">
           🌐 Cross-Chain
         </span>
       </div>
@@ -166,17 +194,17 @@ export function CrossChainPurchaseCard({
       
       <div className="p-4">
         <div className="flex items-start justify-between mb-2">
-          <h3 className="text-lg font-bold text-white">{itemName}</h3>
+          <h3 className="text-xl font-bold text-cyan-300 mb-2">{itemName}</h3>
           <span className={`px-2 py-0.5 bg-gradient-to-r ${getChainColor()} text-white text-xs rounded-full`}>
             {getChainName()}
           </span>
         </div>
         
-        <p className="text-gray-300 text-xs mb-3 line-clamp-1">{itemDescription}</p>
+        <p className="text-blue-200 text-xs mb-3 line-clamp-2">{itemDescription}</p>
         
         <div className="flex items-center justify-between mb-3 pb-3 border-b border-white/10">
           <div>
-            <span className="text-xl font-bold text-white">{price} ETH</span>
+            <span className="text-xl font-bold text-cyan-300">{price} ETH</span>
             <p className="text-xs text-gray-400">≈ ${(parseFloat(price) * 2500).toFixed(2)} USD</p>
           </div>
           <div className="text-right">
@@ -188,7 +216,7 @@ export function CrossChainPurchaseCard({
         <button
           onClick={handlePurchase}
           disabled={isPurchasing || isConfirming || !contractAddress || !address}
-          className="w-full py-2 bg-white hover:bg-gray-100 text-black text-sm font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+          className="w-full py-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-sm font-semibold rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-cyan-500/30"
         >
           {isConfirming ? (
             <span className="flex items-center justify-center gap-2">

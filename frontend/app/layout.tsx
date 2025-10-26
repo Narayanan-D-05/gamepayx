@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Web3Provider } from "@/components/Web3Provider";
 import { VideoBackground } from "@/components/VideoBackground";
+import LoadingProvider from "@/components/LoadingProvider";
 
 export const metadata: Metadata = {
   title: "GamepayX - Cross-Chain Game Store",
@@ -16,12 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black min-h-screen">
-        <VideoBackground />
-        <Web3Provider>
-          <main className="relative min-h-screen">
-            {children}
-          </main>
-        </Web3Provider>
+        <LoadingProvider>
+          <VideoBackground />
+          <Web3Provider>
+            <main className="relative min-h-screen">
+              {children}
+            </main>
+          </Web3Provider>
+        </LoadingProvider>
       </body>
     </html>
   );

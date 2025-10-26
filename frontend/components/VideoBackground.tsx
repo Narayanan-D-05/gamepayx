@@ -15,13 +15,20 @@ export function VideoBackground() {
           transform: 'translate(-50%, -50%)'
         }}
       >
-        <source src="/background/5453622-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+        <source src="/background/bg.mp4" type="video/mp4" />
       </video>
-      {/* Gradient overlay for better readability */}
+      {/* Enhanced gradient overlay for better readability with new video */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5))'
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7))'
+        }}
+      />
+      {/* Additional vignette effect */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%)'
         }}
       />
     </div>
