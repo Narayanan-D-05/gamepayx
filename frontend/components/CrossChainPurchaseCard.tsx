@@ -175,7 +175,7 @@ export function CrossChainPurchaseCard({
   }
 
   return (
-    <div className="bg-black/40 backdrop-blur-xl rounded-xl overflow-hidden border border-white/40 hover:border-white/60 transition-all shadow-2xl hover:shadow-cyan-500/30 group">
+    <div className="bg-black/40 backdrop-blur-xl rounded-xl overflow-hidden border border-white/40 hover:border-white/60 transition-all hover:scale-105 shadow-2xl hover:shadow-cyan-500/30">
       {/* Top Badge */}
       <div className="absolute top-3 right-3 z-10">
         <span className="px-2 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30 font-semibold">
@@ -185,9 +185,8 @@ export function CrossChainPurchaseCard({
 
       {/* Item Image/Icon */}
       <div className={`h-56 bg-gradient-to-br ${getChainColor()} flex items-center justify-center relative overflow-hidden`}>
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
         {/* Try to load image, fallback to emoji icon */}
-        <div className="relative z-10 group-hover:scale-110 transition-transform w-full h-full flex items-center justify-center">
+        <div className="relative z-10 w-full h-full flex items-center justify-center">
           <ItemImageDisplay itemId={itemId} icon={icon} itemName={itemName} />
         </div>
       </div>

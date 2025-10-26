@@ -5,6 +5,7 @@ import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
 import { PurchaseCard } from "@/components/PurchaseCard";
 import { CrossChainPurchaseCard } from "@/components/CrossChainPurchaseCard";
 import { CrossChainInventory } from "@/components/CrossChainInventory";
+import AvailBridge from "@/components/AvailBridge";
 
 type Tab = "shop" | "crosschain" | "inventory";
 
@@ -42,8 +43,8 @@ export default function Home() {
     
     if (chain.id === 84532) {
       return (
-        <span className="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full border border-purple-500/30 flex items-center gap-1">
-          <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+        <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-sm rounded-full border border-cyan-500/30 flex items-center gap-1">
+          <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></span>
           Base Sepolia
         </span>
       );
@@ -59,11 +60,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="border-b border-white/10 backdrop-blur-xl sticky top-0 z-50 bg-black/60">
+      <nav className="border-b border-white/20 backdrop-blur-xl sticky top-0 z-50 bg-black/70 shadow-lg">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-6">
-              <h1 className="text-3xl font-bold text-white tracking-tight">GamepayX</h1>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent tracking-tight">GamepayX</h1>
               
               {/* Navigation Pills */}
               <div className="hidden md:flex gap-2">
@@ -71,8 +72,8 @@ export default function Home() {
                   onClick={() => setActiveTab("crosschain")}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                     activeTab === "crosschain"
-                      ? "bg-white text-black"
-                      : "bg-transparent text-gray-300 hover:text-white hover:bg-white/10"
+                      ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+                      : "bg-transparent text-gray-300 hover:text-cyan-300 hover:bg-cyan-500/10"
                   }`}
                 >
                   Cross-Chain Store
@@ -81,8 +82,8 @@ export default function Home() {
                   onClick={() => setActiveTab("shop")}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                     activeTab === "shop"
-                      ? "bg-white text-black"
-                      : "bg-transparent text-gray-300 hover:text-white hover:bg-white/10"
+                      ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+                      : "bg-transparent text-gray-300 hover:text-cyan-300 hover:bg-cyan-500/10"
                   }`}
                 >
                   Regular Store
@@ -91,8 +92,8 @@ export default function Home() {
                   onClick={() => setActiveTab("inventory")}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                     activeTab === "inventory"
-                      ? "bg-white text-black"
-                      : "bg-transparent text-gray-300 hover:text-white hover:bg-white/10"
+                      ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+                      : "bg-transparent text-gray-300 hover:text-cyan-300 hover:bg-cyan-500/10"
                   }`}
                 >
                   Inventory
@@ -117,7 +118,7 @@ export default function Home() {
                     <button
                       onClick={switchToBase}
                       disabled={chain?.id === 84532}
-                      className="px-3 py-1 bg-purple-600/20 hover:bg-purple-600/30 text-purple-300 text-xs rounded transition-colors disabled:opacity-50"
+                      className="px-3 py-1 bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 text-xs rounded transition-colors disabled:opacity-50"
                       title="Switch to Base"
                     >
                       Base
@@ -139,7 +140,7 @@ export default function Home() {
               {!isConnected && (
                 <button
                   onClick={() => connectors[0] && connect({ connector: connectors[0] })}
-                  className="px-6 py-2 bg-white hover:bg-gray-100 text-black rounded-lg transition-all font-semibold shadow-lg"
+                  className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-lg transition-all font-semibold shadow-lg shadow-cyan-500/30"
                 >
                   Connect Wallet
                 </button>
@@ -152,7 +153,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-7xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6 tracking-tight">
             GamepayX
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -166,7 +167,7 @@ export default function Home() {
             <button
               onClick={() => setActiveTab("crosschain")}
               className={`px-3 py-2 rounded-md text-xs font-medium transition-all ${
-                activeTab === "crosschain" ? "bg-white text-black" : "text-gray-400"
+                activeTab === "crosschain" ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white" : "text-gray-400"
               }`}
             >
               Cross-Chain
@@ -174,7 +175,7 @@ export default function Home() {
             <button
               onClick={() => setActiveTab("shop")}
               className={`px-3 py-2 rounded-md text-xs font-medium transition-all ${
-                activeTab === "shop" ? "bg-white text-black" : "text-gray-400"
+                activeTab === "shop" ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white" : "text-gray-400"
               }`}
             >
               Store
@@ -182,7 +183,7 @@ export default function Home() {
             <button
               onClick={() => setActiveTab("inventory")}
               className={`px-3 py-2 rounded-md text-xs font-medium transition-all ${
-                activeTab === "inventory" ? "bg-white text-black" : "text-gray-400"
+                activeTab === "inventory" ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white" : "text-gray-400"
               }`}
             >
               Inventory
@@ -195,11 +196,11 @@ export default function Home() {
           {!isConnected ? (
             <div className="text-center py-20 bg-black/40 backdrop-blur-xl rounded-xl border border-white/20 shadow-2xl">
               <div className="text-6xl mb-6">🔐</div>
-              <p className="text-xl text-white mb-4 text-shadow">Connect Your Wallet</p>
+              <p className="text-xl text-cyan-300 mb-4 text-shadow">Connect Your Wallet</p>
               <p className="text-gray-300 mb-6 text-shadow">Start shopping cross-chain with Avail Nexus</p>
               <button
                 onClick={() => connectors[0] && connect({ connector: connectors[0] })}
-                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all font-semibold shadow-lg"
+                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white rounded-lg transition-all font-semibold shadow-lg"
               >
                 Connect Wallet
               </button>
@@ -209,18 +210,21 @@ export default function Home() {
               {/* Cross-Chain Store */}
               {activeTab === "crosschain" && (
                 <div>
-                  <div className="mb-6 p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-lg rounded-lg border border-blue-500/30 shadow-xl">
+                  <div className="mb-6 p-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-lg rounded-lg border border-blue-500/30 shadow-xl">
                     <div className="flex items-start gap-3">
                       <span className="text-3xl">🌐</span>
                       <div>
-                        <h3 className="text-lg font-bold text-white mb-1 text-shadow">Cross-Chain Marketplace</h3>
-                        <p className="text-gray-100 text-sm text-shadow">
+                        <h3 className="text-lg font-bold text-cyan-300 mb-1 text-shadow">Cross-Chain Marketplace</h3>
+                        <p className="text-cyan-100 text-sm text-shadow">
                           Items purchased here are accessible on <strong>all chains</strong> via Avail verification.
                           Buy on Sepolia, use on Base!
                         </p>
                       </div>
                     </div>
                   </div>
+
+                  {/* Avail Nexus Bridge - SDK Integration */}
+                  <AvailBridge />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Swords */}
@@ -341,8 +345,8 @@ export default function Home() {
                     <div className="flex items-start gap-3">
                       <span className="text-3xl">🛒</span>
                       <div>
-                        <h3 className="text-lg font-bold text-white mb-1 text-shadow">Regular Marketplace</h3>
-                        <p className="text-gray-100 text-sm text-shadow">
+                        <h3 className="text-lg font-bold text-blue-300 mb-1 text-shadow">Regular Marketplace</h3>
+                        <p className="text-blue-100 text-sm text-shadow">
                           Traditional single-chain purchases. Items are only available on the chain you purchase them on.
                         </p>
                       </div>

@@ -50,8 +50,8 @@ export function CrossChainInventory() {
   const [selectedItem, setSelectedItem] = useState<{ itemId: string; chainName: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const sepoliaAddress = process.env.NEXT_PUBLIC_CROSSCHAIN_GAMESTORE_ADDRESS_SEPOLIA as `0x${string}`;
-  const baseAddress = process.env.NEXT_PUBLIC_CROSSCHAIN_GAMESTORE_ADDRESS_BASE as `0x${string}`;
+  const sepoliaAddress = process.env.NEXT_PUBLIC_CROSSCHAIN_ADDRESS_SEPOLIA as `0x${string}`;
+  const baseAddress = process.env.NEXT_PUBLIC_CROSSCHAIN_ADDRESS_BASE as `0x${string}`;
 
   // Read purchases from Sepolia
   const { data: sepoliaPurchases, refetch: refetchSepolia } = useReadContract({
@@ -230,7 +230,7 @@ export function CrossChainInventory() {
     }
     if (chainId === baseChainId) {
       return (
-        <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30">
+        <span className="px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30">
           Base
         </span>
       );
@@ -250,36 +250,24 @@ export function CrossChainInventory() {
     );
   }
 
-  const totalPurchases = (sepoliaPurchases?.length || 0) + (basePurchases?.length || 0);
-
-  if (totalPurchases === 0) {
-    return (
-      <div className="bg-black/40 backdrop-blur-xl rounded-xl p-8 border border-white/20 shadow-2xl">
-        <div className="text-center">
-          <div className="text-5xl mb-4">📦</div>
-          <p className="text-gray-100 text-shadow">No items in your inventory yet</p>
-          <p className="text-gray-300 text-sm mt-2 text-shadow">Purchase items to see them here!</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="bg-black/30 backdrop-blur-xl rounded-xl p-6 border border-white/20 shadow-2xl">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold text-white flex items-center gap-2 text-shadow">
-          <span>🌐</span>
-          Cross-Chain Inventory
-        </h3>
-        <span className="px-3 py-1 bg-green-500/20 text-green-300 text-sm rounded-full border border-green-500/30">
-          {isLoading ? 'Loading...' : `${purchases.length} ${purchases.length === 1 ? 'Item' : 'Items'}`}
-        </span>
-      </div>
+    <div>
+      <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-8 text-center">Your Inventory</h2>
+      <p className="text-center text-gray-300 text-sm mb-6">
+        Showing items purchased from the Cross-Chain Store
+      </p>
 
       {isLoading ? (
-        <div className="text-center py-12">
-          <div className="text-4xl mb-4">⏳</div>
-          <p className="text-gray-300">Loading your items...</p>
+        <div className="bg-black/40 backdrop-blur-xl rounded-xl p-8 border border-white/20 shadow-2xl">
+          <p className="text-cyan-300 text-center">Loading your items from all chains...</p>
+        </div>
+      ) : purchases.length === 0 ? (
+        <div className="bg-black/40 backdrop-blur-xl rounded-xl p-8 border border-white/20 shadow-2xl">
+          <div className="text-center">
+            <div className="text-5xl mb-4">📦</div>
+            <p className="text-cyan-300">No items found in your inventory.</p>
+            <p className="text-gray-400 text-sm mt-2">Make a purchase to see items here!</p>
+          </div>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -290,13 +278,13 @@ export function CrossChainInventory() {
               
               const isSepoliaChain = chainName === 'Sepolia';
             const gradientColors = isSepoliaChain 
-              ? 'from-blue-600/80 to-purple-600/80' 
-              : 'from-purple-600/80 to-pink-600/80';
+              ? 'from-blue-600/80 to-cyan-600/80' 
+              : 'from-cyan-600/80 to-teal-600/80';
 
             return (
                 <div 
                   key={`${chainName}-${index}`} 
-                  className="bg-black/30 backdrop-blur-xl rounded-xl overflow-hidden border border-white/30 hover:border-white/50 transition-all cursor-pointer hover:scale-105 shadow-2xl hover:shadow-purple-500/20"
+                  className="bg-black/40 backdrop-blur-xl rounded-xl overflow-hidden border border-white/40 hover:border-white/60 transition-all cursor-pointer hover:scale-105 shadow-2xl hover:shadow-cyan-500/30"
                   onClick={() => setSelectedItem({ itemId, chainName })}
                 >
                   {/* Item Image */}
@@ -310,7 +298,7 @@ export function CrossChainInventory() {
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-6xl">{getItemIcon(itemId)}</span>
+                        <span className="text-7xl">{getItemIcon(itemId)}</span>
                       </div>
                     )}
                     <div className="absolute top-2 right-2">
@@ -320,13 +308,13 @@ export function CrossChainInventory() {
                   
                   {/* Item Details */}
                   <div className="p-4">
-                    <h4 className="text-lg font-bold text-white mb-1">{getItemName(itemId)}</h4>
+                    <h3 className="text-xl font-bold text-cyan-300">{getItemName(itemId)}</h3>
                     <p className="text-gray-300 text-xs mb-3 line-clamp-1">
                       Tx: {hash.slice(0, 10)}...{hash.slice(-8)}
                     </p>
                     
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm font-bold text-white">{formatEther(purchase.price)} ETH</span>
+                      <span className="text-sm font-bold text-cyan-300">{formatEther(purchase.price)} ETH</span>
                       <span className="text-xs text-gray-400">
                         {chainName}
                       </span>
@@ -337,7 +325,7 @@ export function CrossChainInventory() {
                         e.stopPropagation();
                         setSelectedItem({ itemId, chainName });
                       }}
-                      className="w-full py-2 bg-white hover:bg-gray-100 text-black text-sm font-semibold rounded-lg transition-all shadow-lg"
+                      className="w-full py-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-cyan-500/30"
                     >
                       View Details
                     </button>
@@ -352,9 +340,9 @@ export function CrossChainInventory() {
         <div className="flex items-start gap-3">
           <span className="text-2xl">💡</span>
           <div>
-            <p className="text-blue-300 font-semibold text-sm mb-1">Cross-Chain Enabled!</p>
+            <p className="text-blue-300 font-semibold text-sm mb-1">Cross-Chain Inventory</p>
             <p className="text-gray-400 text-xs">
-              Items purchased on any chain are accessible everywhere via Avail verification
+              This inventory shows items from the Cross-Chain Store only. Items are accessible on all supported chains via Avail verification. To see all purchases including Regular Store items, check transaction history on block explorers.
             </p>
           </div>
         </div>

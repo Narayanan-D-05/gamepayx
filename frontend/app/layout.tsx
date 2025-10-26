@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Web3Provider } from "@/components/Web3Provider";
 import { VideoBackground } from "@/components/VideoBackground";
-import LoadingProvider from "@/components/LoadingProvider";
+import { LoadingProvider } from "@/components/LoadingProvider";
+import React from 'react';
 
 export const metadata: Metadata = {
   title: "GamepayX - Cross-Chain Game Store",

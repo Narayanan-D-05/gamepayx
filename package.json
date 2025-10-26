@@ -26,7 +26,9 @@
     "lighthouse:inventory:upload": "node scripts/lighthouse-inventory.js upload",
     "lighthouse:inventory:setup": "node scripts/lighthouse-inventory.js setup",
     "withdraw:sepolia": "hardhat run scripts/withdraw.js --network sepolia",
-    "withdraw:baseSepolia": "hardhat run scripts/withdraw.js --network baseSepolia"
+    "withdraw:baseSepolia": "hardhat run scripts/withdraw.js --network baseSepolia",
+    "withdraw:crosschain:sepolia": "hardhat run scripts/withdraw-crosschain.js --network sepolia",
+    "withdraw:crosschain:base": "hardhat run scripts/withdraw-crosschain.js --network baseSepolia"
   },
   "keywords": [],
   "author": "",

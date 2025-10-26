@@ -43,7 +43,7 @@ export function InventoryDetailModal({ itemId, isOpen, onClose, chainName }: Inv
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={onClose}>
       <div 
-        className="bg-gradient-to-br from-purple-900/95 via-blue-900/95 to-indigo-900/95 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/20 shadow-2xl"
+        className="bg-gradient-to-br from-blue-900/95 via-cyan-900/95 to-teal-900/95 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/20 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {loading ? (
@@ -119,7 +119,7 @@ export function InventoryDetailModal({ itemId, isOpen, onClose, chainName }: Inv
                       </div>
                       <div className="h-2 bg-black/30 rounded-full overflow-hidden">
                         <div 
-                          className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all"
+                          className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all"
                           style={{ width: `${Math.min((stat.value / 150) * 100, 100)}%` }}
                         />
                       </div>
@@ -159,10 +159,10 @@ export function InventoryDetailModal({ itemId, isOpen, onClose, chainName }: Inv
                   </div>
                   
                   <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                    <div className="text-purple-400 font-semibold mb-2">🎯 Combo Attacks</div>
+                    <div className="text-cyan-400 font-semibold mb-2">🎯 Combo Attacks</div>
                     <div className="flex flex-wrap gap-2">
                       {metadata.unlockables.combo_attacks.map((combo, index) => (
-                        <span key={index} className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30">
+                        <span key={index} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm border border-cyan-500/30">
                           {combo}
                         </span>
                       ))}
@@ -200,7 +200,7 @@ export function InventoryDetailModal({ itemId, isOpen, onClose, chainName }: Inv
             <div className="p-6 border-t border-white/20 bg-black/20">
               <button
                 onClick={onClose}
-                className="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-lg transition-all"
+                className="w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-lg transition-all"
               >
                 Close
               </button>
